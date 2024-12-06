@@ -3,7 +3,7 @@ const MAX_PLAYERS_PER_ROOM = 8;
 const rooms = {};
 const playesChannel = {};
 const COUNTDOWN_SECONDS = 10;
-var sendList = false
+let sendList = false
   
 // Crear un servidor WebSocket en el puerto 8081
 const wss = new WebSocket.Server({ port: 8081 });
