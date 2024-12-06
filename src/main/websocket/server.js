@@ -129,8 +129,8 @@ wss.on('connection', (ws, req) => {
                 break;
             }
                 case "flagCaptured":{
-                    var team=null
-                    var name = null;
+                    let team=null
+                    let name = null;
                     
                     rooms["abc123"].players.forEach((player) => {
 
@@ -187,8 +187,8 @@ wss.on('connection', (ws, req) => {
 
                     case 'powerCaptured':{
 
-                    var team=null
-                    var name = null;
+                    let team=null
+                    let name = null;
                     
                     rooms["abc123"].players.forEach((player) => {
 
