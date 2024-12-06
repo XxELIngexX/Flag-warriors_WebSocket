@@ -30,7 +30,7 @@ wss.on('connection', (ws, req) => {
                 }
                sendList = true;
                 break
-            case 'joinRoom':
+            case 'joinRoom': {
                 const roomName = data.code;
                 if (!rooms[roomName]) {
                     rooms[roomName] = {
@@ -108,8 +108,8 @@ wss.on('connection', (ws, req) => {
                 }
                 break;
 
-
-            case 'updatePosition':
+            }
+            case 'updatePosition':{
                 const playerUpdate = rooms["abc123"].players.find(player => player.id === data.id);
                 playerUpdate.x = data.x;
                 playerUpdate.y=data.y
@@ -127,7 +127,8 @@ wss.on('connection', (ws, req) => {
                     
                 });
                 break;
-                case "flagCaptured":
+            }
+                case "flagCaptured":{
                     var team=null
                     var name = null;
                     
@@ -158,9 +159,9 @@ wss.on('connection', (ws, req) => {
                     });
 
                     break
+                }
 
-
-                    case 'actualizarPuntos':
+                    case 'actualizarPuntos':{
                         const currentPlayer = rooms["abc123"].players.find(player => player.id == sessionId);
                         currentPlayer.score += 1;
                         
@@ -172,6 +173,7 @@ wss.on('connection', (ws, req) => {
                             }));
                         });
                         break
+                    }
                     case 'finish':
                          
                     rooms["abc123"].players.forEach((player) => {
@@ -183,7 +185,7 @@ wss.on('connection', (ws, req) => {
                     
                     });
 
-                    case 'powerCaptured':
+                    case 'powerCaptured':{
 
                     var team=null
                     var name = null;
@@ -212,7 +214,7 @@ wss.on('connection', (ws, req) => {
                         
                         
                     });
-                    break
+                    break}
                 }
     
     });
