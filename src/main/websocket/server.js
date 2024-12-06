@@ -184,6 +184,7 @@ wss.on('connection', (ws, req) => {
                     
                     
                     });
+                    break;
 
                     case 'powerCaptured':{
 
